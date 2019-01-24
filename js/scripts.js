@@ -2,23 +2,35 @@
 var numRead = function(yourNum){
   var newLife = "";
 
+  if(isNaN(yourNum)) {
+    return "Not a number!!"
+    }
   // for (var i = 0; i<numArray.length; i++){
     if(parseInt(yourNum)%7 === 0){
     return "life";
     }
   // return newLife;
-  var numArray = yourNum.split("");
+  var numArray = [];
+  var newArray = [];
 
-  for (var i=0; i <numArray.length; i++){
+  for (var j=0; j < yourNum; j++) {
+    numArray.push(j + 1);
+  }
+    // if(numArray)
+
+  for (var i=0; i < yourNum; i++){
     if(numArray[i] == 5){
-    numArray[i] = "cake";
+      newArray[i] = "cake";
 
     } else if(numArray[i] ==3){
-      numArray[i] = "sofa";
+      newArray[i] = "sofa";
+
+    } else {
+      newArray[i] = numArray[i];
     }
-      newLife+=numArray[i];
-    }
-    return newLife;
+    newLife = newArray;
+  }
+  return newLife;
 
 };
 
